@@ -1,0 +1,30 @@
+.navContainer{
+  width: 100%;
+  padding:2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+
+.aLink{
+  color:white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cartWidgetContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartIcon{
+  width:4rem;
+}
+
+.cartCounter{
+  color:blueviolet;
+  font-size: 1rem;
+  font-weight: 500;
+}

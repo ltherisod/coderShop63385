@@ -7,6 +7,7 @@ import NavbarReactBootstrap from './components/NavbarReactBootstrap';
 import ComponenteConChildren from './components/EjemploChildren/ComponenteConChildren';
 import EjemploEstados from './components/EjemploEstados/EjemploEstados';
 import EjemploUseEffect from './components/EjemploUseEffect/EjemploUseEffect';
+import EjemploPromise from './components/EjemploPromise/EjemploPromise';
 
 function App() {
 
@@ -25,8 +26,9 @@ console.log('App')
       <ComponenteConChildren text='ejemplo tres'>
        <button className='btn btn-danger'>Click!</button>
       </ComponenteConChildren> */}
-      <EjemploEstados/>
-        <EjemploUseEffect/>
+      {/* <EjemploEstados/>
+        <EjemploUseEffect/> */}
+        {/* <EjemploPromise/> */}
    </div>
   )
 }

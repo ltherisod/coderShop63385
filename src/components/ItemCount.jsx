@@ -14,6 +14,7 @@ const ItemCount = ({stock, onAdd}) => {
             setCount(count-1)
         }
     }
+    
     console.log('SoyItemCount')
 
     const onAddHandler = ()=>{

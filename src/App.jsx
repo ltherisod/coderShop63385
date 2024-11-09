@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import ItemListContainer from './components/ItemListContainer'
 import NavbarReactBootstrap from './components/NavbarReactBootstrap';
+import FetchContainer from './components/Ejemplos/EjemploFetch/FetchContainer';
 
 
 function App() {
@@ -12,8 +13,8 @@ function App() {
    <div>
    
       <NavbarReactBootstrap/>
-      <ItemListContainer greeting='Bienvenidos al bazar Bartiano' />
-  
+      {/* <ItemListContainer greeting='Bienvenidos al bazar Bartiano' /> */}
+      <FetchContainer/>
    </div>
   )
 }

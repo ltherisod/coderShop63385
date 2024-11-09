@@ -4,6 +4,7 @@ const EjemploUseEffect = () => {
     const [on, setOn]= useState(true)
     const [count, setCount] = useState(1)
     //Se ejecuta siempre
+    //No se suele usar
     useEffect(()=>{
      console.log('El useEffect que se ejecuta siempre')   
     })

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import {getProducts} from '../../mock/data'
+import {getProducts} from '../../../mock/data'
 
 const EjemploPromise = () => {
     let error = true
@@ -35,7 +35,7 @@ const EjemploPromise = () => {
     },[])
   return (
     <div>
-        <p></p>
+        <p>Ejmeplo Promise</p>
     </div>
   )
 }

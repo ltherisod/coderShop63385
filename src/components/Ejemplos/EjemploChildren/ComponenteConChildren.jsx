@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ComponenteConChildren = ({children, text}) => {
+const ComponenteConChildren = ({children, text=''}) => {
     // const {children}=props
   return (
     <div>

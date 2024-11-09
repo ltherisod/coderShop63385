@@ -1,3 +1,5 @@
+
+
 const productos= [
     {
         id:'1',
@@ -38,6 +40,7 @@ const productos= [
 ]
 
 export const getProducts = () =>{
+  
     let error = false
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
@@ -45,6 +48,37 @@ export const getProducts = () =>{
                 reject('Hubo un error, intente mas tarde')
             }else{
                 resolve(productos)
+            
+            }
+        },3000)
+    })
+}
+
+//Opcion sensilla
+// export const getOneProduct = ()=>{
+//     let error=false
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             if(!error){
+//                 resolve(productos[1])
+//             }else{
+//                 reject('No hay data')
+//             }
+//         },3000)
+//     })
+// }
+
+//Opcion dinamica
+
+export const getOneProduct = (id)=>{
+    let error=false
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(!error){
+                let product = productos.find((item)=> item.id === id)
+                resolve(product)
+            }else{
+                reject('No hay data')
             }
         },3000)
     })

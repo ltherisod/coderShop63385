@@ -4,7 +4,6 @@ const ItemCount = ({stock, onAdd}) => {
     const [count, setCount]= useState(1)
     const sumar = () =>{
         if(count < stock){
-
             setCount(count + 1 )
         }
     }

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import FetchList from './FetchList'
 
 const FetchContainer = () => {
 //Declamarmos los estados
@@ -6,6 +7,8 @@ const FetchContainer = () => {
     const [error, setError]=useState(null)
     // const [on, setOn] = useState(false)
     const [loader, setLoader]=useState(false)
+
+    //THEN Y CATCH
     useEffect(()=>{
         //Pido datos, traer data, hacemos un get
         setLoader(true)
@@ -25,6 +28,54 @@ const FetchContainer = () => {
         })
     },[])
 
+    //TRY CATCH
+
+//     const getCharacters = async ()=>{
+//         try{
+//             setLoader(true)
+//             const res = await fetch('https://rickandmortyapi.com/api/character')
+//             console.log(res, 'res')
+//             const result = await res.json()
+//             console.log(result, 'result')
+//             setPersonajes(result.results)
+//         }catch(error){
+//             setError(true)
+//         }finally{
+//             setLoader(false)
+//         }
+//     }
+//    useEffect(()=>{
+//     getCharacters()
+//    },[])
+
+
+//Async await
+
+// const getCharacters = async () =>{
+//     const res = await fetch('https://rickandmortyapi.com/api/character')
+//     const result = await res.json()
+//     return result.results
+// }
+
+// useEffect(()=>{
+//     setLoader(true)
+//     getCharacters()
+//     .then((data)=> setPersonajes(data))
+//     .catch((error)=> setError(error))
+//     .finally(()=> setLoader(false))
+// },[])
+
+// useEffect(()=>{
+//     try{
+//         const data = getCharacters()
+//         setPersonajes(data)
+//     }catch(error){
+//         setError(error)
+//     }finally{
+// setLoader(false)
+//     }
+// },[])
+
     //return anticipado
     if(loader){
         return <p>Cargando....</p>
@@ -33,7 +84,7 @@ const FetchContainer = () => {
     <div>
         {/* <button onClick={()=> setOn(!on)}> on</button> */}
         {error && <p>Disculpe las molestias, intente mas tarde</p>}
-        {personajes.map((personaje)=><p key={personaje.id}>{personaje.name}</p>)}
+       <FetchList personajes={personajes}/>
     </div>
   )
 }

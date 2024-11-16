@@ -1,32 +1,33 @@
 import React, {useState, useEffect} from 'react'
-import { Button } from "react-bootstrap"
-import ItemCount from "./ItemCount"
 import { getProducts } from "../mock/data"
 import ItemList from './ItemList'
-import useFetch from '../hooks/useFetch'
+import {  useParams } from 'react-router-dom'
+
 
 const ItemListContainer = ({greeting, texto}) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading]= useState(false)
-    const{data} = useFetch('https://rickandmortyapi.com/api/character')
+    const {category}= useParams()
     // const {greeting, texto} = props
-    console.log(data.results)
-
-   
-  
-
     useEffect(()=>{
         setLoading(true)
         getProducts()
-        .then((res)=> setProducts(res))
+        .then((res)=>{
+            if(category){
+                //filtrar
+                setProducts(res.filter((prod)=> prod.category === category ))
+            }else{
+                setProducts(res)
+            }
+        })
         .catch((error)=> console.log(error))
         .finally(()=> setLoading(false))
-    },[])
+    },[category])
 
-   
     return(
         <div>
-            <h1 className="text-center">{greeting}</h1>
+          
+            <h1 className="text-center">{greeting}<span style={{textTransform:'capitalize', color:'violet'}}>{category}</span></h1>
             {/* Ejemplos */}
             {/* <p>{texto}</p>
             <Button variant="primary">Primary</Button>

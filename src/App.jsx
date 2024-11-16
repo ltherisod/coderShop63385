@@ -4,27 +4,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import ItemListContainer from './components/ItemListContainer'
 import NavbarReactBootstrap from './components/NavbarReactBootstrap';
-import FetchContainer from './components/Ejemplos/EjemploFetch/FetchContainer';
-import ComponenteConChildren from './components/Ejemplos/EjemploChildren/ComponenteConChildren';
-import { StyledComponent } from './components/Ejemplos/EjmploHoc/EjemploHoc';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Error from './components/Error';
 
 
 function App() {
-
   return (
-   <div>
-   
-      <NavbarReactBootstrap/>
-      <ItemListContainer greeting='Bienvenidos al bazar Bartiano' />
-      <ItemDetailContainer/>
-      {/* <ComponenteConChildren>
-
-       
-      </ComponenteConChildren>
-      <FetchContainer/> */}
-      {/* <StyledComponent/> */}
-   </div>
+   <BrowserRouter>
+    <NavbarReactBootstrap/>
+    <Routes>
+      <Route path='/' element={<ItemListContainer greeting='Bienvenidos'/>}/>
+      <Route path='/products/:category' element={<ItemListContainer greeting='Bienvenidos a la categoria: '/>}/>
+      <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+      <Route path='*' element={<Error/>}/>
+    </Routes>
+   </BrowserRouter>
   )
 }
 

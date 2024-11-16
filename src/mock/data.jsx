@@ -34,7 +34,16 @@ const productos= [
         stock:550,
         price:55000,
         description:'lorem ipsu,dkfnkdnfdnfkdnflk',
-        img:'./shopping-cart.png',
+        img:'../shopping-cart.png',
+        category:'mas vendidos'
+    },
+    {
+        id:'5',
+        name:'Random 4',
+        stock:550,
+        price:55000,
+        description:'lorem ipsu,dkfnkdnfdnfkdnflk',
+        img:'https://i.postimg.cc/zXJgYb8n/darth-vader-rogue-one-4k-zu-1280x720.jpg',
         category:'mas vendidos'
     }
 ]

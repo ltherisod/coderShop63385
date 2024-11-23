@@ -35,7 +35,7 @@ const ItemListContainer = ({greeting, texto}) => {
             {/* Esto mas adelante no va a estar en este componente */}
            {loading ? <p>Cargando...</p>: <ItemList products={products}/>}
            
-        </div>
+         </div>
     )
 }
 export default ItemListContainer

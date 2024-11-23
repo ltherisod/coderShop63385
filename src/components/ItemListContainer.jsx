@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { getProducts } from "../mock/data"
 import ItemList from './ItemList'
 import {  useParams } from 'react-router-dom'
+import Loader from './Loader'
 
 
 const ItemListContainer = ({greeting, texto}) => {
@@ -28,13 +29,7 @@ const ItemListContainer = ({greeting, texto}) => {
         <div>
           
             <h1 className="text-center">{greeting}<span style={{textTransform:'capitalize', color:'violet'}}>{category}</span></h1>
-            {/* Ejemplos */}
-            {/* <p>{texto}</p>
-            <Button variant="primary">Primary</Button>
-            <button type="button" className="btn btn-danger">Danger</button> */}
-            {/* Esto mas adelante no va a estar en este componente */}
-           {loading ? <p>Cargando...</p>: <ItemList products={products}/>}
-           
+           {loading ? <Loader/>: <ItemList products={products}/>}
          </div>
     )
 }

@@ -1,17 +1,9 @@
 
-
-const productos= [
+//Para subir dinamicamente, borren los ids y el producto que subieron a mano
+//Exporten el array para usarlo en otro lado
+export const productosDB= [
     {
-        id:'1',
-        name:'Random 1',
-        stock:10,
-        price:50,
-        description:'lorem ipsu,dkfnkdnfdnfkdnflk',
-        img:'https://picsum.photos/200',
-        category:'nuevos'
-    },
-    {
-        id:'2',
+       
         name:'Random 2',
         stock:18,
         price:150,
@@ -20,7 +12,7 @@ const productos= [
         category:'ofertas'
     },
     {
-        id:'3',
+       
         name:'Random 3',
         stock:50,
         price:5000,
@@ -29,7 +21,7 @@ const productos= [
         category:'mas vendidos'
     },
     {
-        id:'4',
+      
         name:'Random 4',
         stock:550,
         price:55000,
@@ -38,7 +30,7 @@ const productos= [
         category:'mas vendidos'
     },
     {
-        id:'5',
+       
         name:'Random 4',
         stock:550,
         price:55000,

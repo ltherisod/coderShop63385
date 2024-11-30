@@ -3,19 +3,37 @@ import { getOneProduct, getProducts } from '../mock/data'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader'
+import { collection, doc, getDoc } from 'firebase/firestore'
+import { db } from '../services/firebase'
 
 const ItemDetailContainer = () => {
     const [producto, setProducto]=useState({})
     const [loading, setLoading]= useState(false)
     const { id } = useParams()
-    console.log(id)
+
+    //FIREBASE
+
     useEffect(()=>{
       setLoading(true)
-        getOneProduct(id)
-        .then((res)=> setProducto(res))
-        .catch((error)=>console.log(error))
-        .finally(()=> setLoading(false))
+      //collection y proyect firebase
+      const collectionProd = collection(db, "productos")
+      //creamos una referencia
+      const docRef = doc(collectionProd,id )
+      // const docRef = doc(db, "productos", id)
+      //traer el documento
+      getDoc(docRef)
+      .then((res)=> setProducto({id: res.id, ...res.data()}))
+      .catch((error)=> console.log(error))
+      .finally(()=> setLoading(false))
     },[])
+    //MOCK LOCAL
+    // useEffect(()=>{
+    //   setLoading(true)
+    //     getOneProduct(id)
+    //     .then((res)=> setProducto(res))
+    //     .catch((error)=>console.log(error))
+    //     .finally(()=> setLoading(false))
+    // },[])
     // useEffect(()=>{
     //     getProducts()
     //     .then((res)=> setProducto(res.find((item)=> item.id === '2')))

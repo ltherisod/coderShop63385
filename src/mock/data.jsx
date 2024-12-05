@@ -1,7 +1,7 @@
 
 //Para subir dinamicamente, borren los ids y el producto que subieron a mano
 //Exporten el array para usarlo en otro lado
-export const productosDB= [
+export const productos= [
     {
        
         name:'Random 2',

@@ -23,6 +23,7 @@ const ItemCount = ({stock, onAdd}) => {
     }
   return (
     <div>
+        {stock === 0 && <p>Lo sentimos no hay mas stock disponible</p>}
     <div>
         <button className='btn btn-danger' onClick={restar} >-</button>
         <span className='btn'>{count}</span>

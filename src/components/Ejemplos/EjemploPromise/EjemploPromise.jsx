@@ -20,7 +20,7 @@ const EjemploPromise = () => {
             }
         },5000)
     })
-    console.log(fakeApi)
+  
     useEffect(()=>{
         fakeApi
         .then((res)=> console.log('Respuesta: ', res))

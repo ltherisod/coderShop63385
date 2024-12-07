@@ -6,7 +6,7 @@ import CartWidgetReactIcons from './CartWidgetReactIcons';
 import { NavLink } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 function NavbarReactBootstrap() {
-  console.log('Navbar')
+
   const {cartQuantity} = useCart()
   return (
     <Navbar expand="lg" className="bg-body-tertiary">

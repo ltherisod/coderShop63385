@@ -28,53 +28,7 @@ const FetchContainer = () => {
         })
     },[])
 
-    //TRY CATCH
 
-//     const getCharacters = async ()=>{
-//         try{
-//             setLoader(true)
-//             const res = await fetch('https://rickandmortyapi.com/api/character')
-//             console.log(res, 'res')
-//             const result = await res.json()
-//             console.log(result, 'result')
-//             setPersonajes(result.results)
-//         }catch(error){
-//             setError(true)
-//         }finally{
-//             setLoader(false)
-//         }
-//     }
-//    useEffect(()=>{
-//     getCharacters()
-//    },[])
-
-
-//Async await
-
-// const getCharacters = async () =>{
-//     const res = await fetch('https://rickandmortyapi.com/api/character')
-//     const result = await res.json()
-//     return result.results
-// }
-
-// useEffect(()=>{
-//     setLoader(true)
-//     getCharacters()
-//     .then((data)=> setPersonajes(data))
-//     .catch((error)=> setError(error))
-//     .finally(()=> setLoader(false))
-// },[])
-
-// useEffect(()=>{
-//     try{
-//         const data = getCharacters()
-//         setPersonajes(data)
-//     }catch(error){
-//         setError(error)
-//     }finally{
-// setLoader(false)
-//     }
-// },[])
 
     //return anticipado
     if(loader){

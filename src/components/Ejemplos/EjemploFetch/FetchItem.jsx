@@ -1,7 +1,7 @@
 import React from 'react'
 
 const FetchItem = ({personaje}) => {
-    console.log(personaje)
+ 
   return (
     <div>
         <img src={personaje.image} alt={personaje.name}/>

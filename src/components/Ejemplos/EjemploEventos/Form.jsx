@@ -6,11 +6,11 @@ const Form = () => {
     const [direccion, setDireccion] = useState('')
     const [email, setEmail] = useState('')
 
-    console.log(nombre, apellido, direccion, email)
+   
     const enviarDatos = (e) =>{
         e.preventDefault()
         const data = {nombre, apellido, direccion, email}
-        console.log(data)
+        
     }
   return (
     <div>

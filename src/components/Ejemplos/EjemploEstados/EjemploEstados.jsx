@@ -5,7 +5,7 @@ const EjemploEstados = () => {
     const cambiarTexto= () =>{
         setText('Chau Chicos')
     }
-    console.log('EjmploEstados')
+ 
   return (
     <div>
         <p>{text}</p>
